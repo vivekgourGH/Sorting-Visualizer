@@ -1,1 +1,212 @@
+:root {
+  --primary-color: #3498db; /* Blue */
+  --secondary-color: #2980b9; /* Darker blue */
+  --accent-color: #e74c3c; /* Red */
+  --success-color: #2ecc71; /* Green */
+  --warning-color: #f1c40f; /* Yellow */
+  --info-color: #8e44ad; /* Purple */
+  --neutral-color: #bdc3c7; /* Soft grey */
+  --background-color: #000000; /* Black */
+  --text-color: #ffffff; /* White */
+  --line-color: #95a5a6; /* Muted grey for lines */
+  --title-bg-color: #34495e; /* Dark grey */
+  --footer-bg-color: #1c2833; /* Deep blue-grey */
+  --shadow-color: rgba(255, 255, 255, 0.1); /* Light shadow */
+  --text-shadow-color: rgba(0, 0, 0, 0.3); /* Subtle text shadow */
+}
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+  user-select: none;
+}
+
+body {
+  position: relative;
+  min-height: 100vh;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+/* Title CSS */
+.title {
+  background-color: var(--title-bg-color);
+  color: var(--text-color);
+  font-size: clamp(1.2em, 2vw, 1.5em);
+  padding: 1em;
+  margin: 1rem auto;
+  cursor: pointer;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px var(--shadow-color);
+  text-shadow: 1px 1px 2px var(--text-shadow-color);
+  border: 2px solid var(--line-color);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.title:hover {
+  background-color: var(--secondary-color);
+  border-color: var(--primary-color);
+}
+
+/* Navbar CSS */
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1em;
+  padding: 1em;
+  margin: 1rem auto;
+  background-color: var(--secondary-color);
+  border: 2px solid var(--line-color);
+  border-radius: 12px;
+  box-shadow: 0 4px 8px var(--shadow-color);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.navbar a {
+  all: unset;
+  cursor: pointer;
+  color: var(--text-color);
+  font-weight: bold;
+  padding: 0.5em 1em;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, transform 0.2s;
+  background-color: var(--accent-color);
+  box-shadow: 0 2px 4px var(--shadow-color);
+  text-shadow: 1px 1px 2px var(--text-shadow-color);
+  border: 2px solid var(--line-color);
+}
+
+.navbar a:hover,
+.navbar a:focus {
+  background-color: var(--success-color);
+  transform: translateY(-2px);
+  border-color: var(--primary-color);
+}
+
+.navbar #menu {
+  outline: none;
+  padding: 0.5em;
+  border-radius: 8px;
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  box-shadow: 0 2px 4px var(--shadow-color);
+  text-shadow: 1px 1px 2px var(--text-shadow-color);
+  border: 2px solid var(--line-color);
+}
+
+/* Center Section CSS */
+.center {
+  margin: 2rem auto;
+  max-width: 90%;
+  background-color: var(--neutral-color);
+  padding: 1rem;
+  border-radius: 12px;
+  color: var(--background-color);
+  box-shadow: 0 8px 16px var(--shadow-color);
+  text-shadow: 1px 1px 2px var(--text-shadow-color);
+  border: 2px solid var(--line-color);
+}
+
+.array {
+  display: flex;
+  gap: 0.5rem;
+  padding: 1rem;
+  overflow-x: auto;
+  border: 2px solid var(--line-color);
+  border-radius: 8px;
+}
+
+/* Cell CSS */
+.cell {
+  flex: 1;
+  min-width: 20px;
+  height: 40px;
+  background-color: var(--neutral-color);
+  margin: 0.5rem;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 2px 4px var(--shadow-color);
+  border: 2px solid var(--line-color);
+}
+
+.cell:hover {
+  transform: scale(1.05);
+}
+
+.cell.done {
+  background-color: var(--success-color);
+  color: var(--background-color);
+}
+
+.cell.visited {
+  background-color: var(--info-color);
+  color: var(--background-color);
+}
+
+.cell.current {
+  background-color: var(--accent-color);
+  color: var(--background-color);
+}
+
+.cell.min {
+  background-color: var(--warning-color);
+  color: var(--background-color);
+}
+
+/* Footer CSS */
+footer {
+  background-color: var(--footer-bg-color);
+  color: var(--text-color);
+  font-size: clamp(0.8em, 2vw, 1em);
+  padding: 1.5em;
+  border-radius: 12px;
+  margin: 1rem auto;
+  box-shadow: 0 4px 8px var(--shadow-color);
+  text-shadow: 1px 1px 2px var(--text-shadow-color);
+  border: 2px solid var(--line-color);
+}
+
+footer p {
+  margin-bottom: 0.6em;
+}
+
+.footer .link {
+  text-decoration: none;
+  font-weight: bold;
+  color: var(--primary-color);
+  transition: color 0.3s ease, transform 0.2s;
+}
+
+.footer .link:hover,
+.footer .link:focus {
+  color: var(--success-color);
+  transform: translateY(-2px);
+}
+
+/* Responsive Design */
+@media screen and (max-width: 600px) {
+  .navbar {
+    gap: 0.4em;
+  }
+  .title {
+    font-size: 1em;
+  }
+  .navbar *,
+  .navbar a {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .center {
+    width: 95%;
+    padding: 0.5rem;
+  }
+}
